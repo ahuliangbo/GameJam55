@@ -63,7 +63,7 @@ public abstract class CharacterControllerBase : MonoBehaviour
     {
     }
 
-    protected virtual void DefaultUpdateMovement ()
+    public virtual void DefaultUpdateMovement ()
     {
 	}
 
@@ -175,7 +175,7 @@ public abstract class CharacterControllerBase : MonoBehaviour
 		return Vector2.up;
 	}
 
-    protected virtual string GetCurrentSpriteStateForDefault()
+    public virtual string GetCurrentSpriteStateForDefault()
     {
         return "";
     }

@@ -107,7 +107,7 @@ public class GroundedCharacterController : CharacterControllerBase
 
     //Default update, used when no movement abilities are valid
     //Combines input and other forces to update the velocity, then moves the collider using that velocity
-    protected override void DefaultUpdateMovement()
+    public override void DefaultUpdateMovement()
     {
         //Jump cut can also be honored by other movement modules, but that is their decision
         UpdateJumpCut();
@@ -419,7 +419,7 @@ public class GroundedCharacterController : CharacterControllerBase
         return m_JumpVelocity;
     }
 
-    protected override string GetCurrentSpriteStateForDefault()
+    public override string GetCurrentSpriteStateForDefault()
     {
         if (m_ControlledCollider.IsGrounded())
         {
