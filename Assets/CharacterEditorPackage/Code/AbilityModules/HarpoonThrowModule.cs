@@ -14,6 +14,8 @@ public class HarpoonThrowModule : GroundedControllerAbilityModule
     [SerializeField] float m_ThrowCooldown = 0.5f;
     [SerializeField] float m_PullForce = 25.0f;
     [SerializeField] float m_PullCooldown = 1.0f;
+
+    [SerializeField] Vector3 m_ThrowOffset = Vector3.zero;
     
     [Header("Rope Constraint")]
     [SerializeField] bool m_StopAtRopeLimit = true;
@@ -54,7 +56,7 @@ public class HarpoonThrowModule : GroundedControllerAbilityModule
         Vector2 direction = (mousePos - playerPos).normalized;
         
         // Instantiate harpoon
-        GameObject harpoonObj = Instantiate(m_HarpoonPrefab, m_ControlledCollider.transform.position, Quaternion.identity);
+        GameObject harpoonObj = Instantiate(m_HarpoonPrefab, m_ControlledCollider.transform.position + m_ThrowOffset, Quaternion.identity);
         m_ActiveHarpoon = harpoonObj.GetComponent<HarpoonProjectile>();
         
         if (m_ActiveHarpoon == null)
